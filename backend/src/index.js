@@ -21,7 +21,7 @@ if (!process.env.JWT_SECRET) {
 // ✅ Allowed Origins
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://chatbot-omega-lime.vercel.app"  // <-- Apna Vercel frontend URL yaha daalna
+    // <-- Apna Vercel frontend URL yaha daalna
 ];
 
 // ✅ Middleware
