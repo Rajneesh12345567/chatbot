@@ -21,7 +21,6 @@ if (!process.env.JWT_SECRET) {
 // ✅ Allowed Origins
 const allowedOrigins = [
   "http://localhost:5173",
-    // <-- Apna Vercel frontend URL yaha daalna
 ];
 
 // ✅ Middleware
