@@ -21,6 +21,7 @@ if (!process.env.JWT_SECRET) {
 // ✅ Allowed Origins
 const allowedOrigins = [
   "http://localhost:5173",
+  "http://localhost:51774",
   "https://chatbot-5wgtwwime-rajneeshs-projects-fd6503e5.vercel.app",
 ];
 
@@ -39,7 +40,9 @@ app.use(
     },
     credentials: true,
   })
+  
 );
+
 
 // ✅ Routes
 app.use("/user", authRouter);
