@@ -20,8 +20,10 @@ if (!process.env.JWT_SECRET) {
 
 // ✅ Allowed Origins
 const allowedOrigins = [
-  "http://localhost:5173",
+  "https://chatbot-omega-lime.vercel.app",
+  "http://localhost:5173"
 ];
+
 
 // ✅ Middleware
 app.use(express.json());
