@@ -1,7 +1,17 @@
 import mongoose from "mongoose";
 
-async function connectToDb() {
-  await mongoose.connect(process.env.MONGODB_CONNECT);
-}
+const connectToDb = async () => {
+  try {
+    const mongoURL = process.env.MONGODB_CONNECT;
+    await mongoose.connect(mongoURL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("✅ MongoDB connected successfully");
+  } catch (error) {
+    console.error("❌ MongoDB connection error:", error);
+    throw error;
+  }
+};
 
 export default connectToDb;
