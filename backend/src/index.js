@@ -20,20 +20,20 @@ if (!process.env.JWT_SECRET) {
 
 // ✅ Allowed Origins
 const allowedOrigins = [
-  "https://chatbot-omega-lime.vercel.app",
-  "http://localhost:5173"
+  "http://localhost:5173",
+  "https://chatbot-5wgtwwime-rajneeshs-projects-fd6503e5.vercel.app",
 ];
-
 
 // ✅ Middleware
 app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: function (origin, callback) {
+    origin: (origin, callback) => {
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
+        console.log("❌ CORS blocked request from:", origin);
         callback(new Error("Not allowed by CORS"));
       }
     },
